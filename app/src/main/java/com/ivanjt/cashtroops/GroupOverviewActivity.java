@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
@@ -19,8 +20,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.ivanjt.cashtroops.model.Group;
 import com.ivanjt.cashtroops.model.Wallet;
+import com.journeyapps.barcodescanner.CaptureActivity;
 
 public class GroupOverviewActivity extends AppCompatActivity {
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -28,6 +32,7 @@ public class GroupOverviewActivity extends AppCompatActivity {
     private TextView mNameTextView;
     private TextView mCashTagTextView;
     private ImageView mHistoryImageButton;
+    public final static int QR_REQUEST = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,15 +141,40 @@ public class GroupOverviewActivity extends AppCompatActivity {
 
     }
 
-    public void handleTransaction(View view) {
-        switch (view.getId()) {
-            case R.id.iv_overview_group_qr:
-
+    public void handleTransaction(View view){
+        switch(view.getId()){
+            case R.id.iv_overview_group_qr :
+                IntentIntegrator scanIntegrator = new IntentIntegrator(com.ivanjt.cashtroops.GroupOverviewActivity.this);
+                scanIntegrator.setPrompt("Scan QR Cashtag");
+                scanIntegrator.setBeepEnabled(true);
+                scanIntegrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                scanIntegrator.setCaptureActivity(CaptureActivity.class);
+                scanIntegrator.setOrientationLocked(true);
+                scanIntegrator.setBarcodeImageEnabled(true);
+                startActivityForResult(scanIntegrator.createScanIntent(), QR_REQUEST);
                 break;
             case R.id.iv_overview_group_deposit:
 
                 break;
             case R.id.iv_overview_group_withdraw:
+
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case QR_REQUEST :
+                String to;
+                IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+                if (scanningResult != null) {
+                    if (scanningResult.getContents() != null) {
+                        to = scanningResult.getContents();
+                        Toast.makeText(this, to, Toast.LENGTH_SHORT).show();
+                    }
+                }
 
                 break;
         }
