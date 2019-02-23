@@ -7,6 +7,8 @@
     <string name="title_activity_group_create">Create a Group</string>
     <string name="title_activity_group_history">History</string>
     <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="title_activity_group_invite">GroupInviteActivity</string>
+    <string name="title_activity_create_event">CreateEventActivity</string>
 
     <!-- main -->
     <string name="overview">Overview</string>
@@ -23,7 +25,6 @@
     <string name="register_button">Register</string>
     <string name="minimum_password">Your password is too short, try again!</string>
     <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
-
 
     <!--NavigationACTIVITY-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -73,7 +74,29 @@
         <item>IDR</item>
         <item>USD</item>
     </string-array>
-    <string name="title_activity_group_invite">GroupInviteActivity</string>
-    <string name="title_activity_create_event">CreateEventActivity</string>
+
+    <string-array name="overview_buttons_img">
+        <item>img_profile</item>
+        <item>img_invite</item>
+        <item>img_members</item>
+        <item>img_deposit</item>
+        <item>img_event</item>
+        <item>img_history</item>
+        <item>img_withdraw</item>
+        <item>img_qr</item>
+        <item>img_settings</item>
+    </string-array>
+
+    <string-array name="overview_buttons_resources">
+        <item>R.id.iv_overview_group_information</item>
+        <item>R.id.iv_overview_group_add_member</item>
+        <item>R.id.iv_overview_group_member</item>
+        <item>R.id.iv_overview_group_deposit</item>
+        <item>R.id.iv_overview_group_event</item>
+        <item>R.id.iv_overview_group_history</item>
+        <item>R.id.iv_overview_group_withdraw"</item>
+        <item>R.id.iv_overview_group_qr</item>
+        <item>R.id.iv_overview_group_settings</item>
+    </string-array>
 
 </resources>
