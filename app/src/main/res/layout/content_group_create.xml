@@ -16,7 +16,7 @@
         android:layout_height="150dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
+        tools:srcCompat="@drawable/img_members"
         android:contentDescription="Profile picture for a group account." />
 
     <TextView
@@ -158,5 +158,13 @@
             android:hint="Enter deposit amount here" />
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/image_large"
+        android:layout_height="@dimen/image_medium"
+        android:src="@drawable/img_jenius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
