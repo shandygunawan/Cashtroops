@@ -1,16 +1,14 @@
 package com.ivanjt.cashtroops.model;
 
-import java.util.Date;
-
 public class Transfer {
     public static final String PATH_NAME = "transfers";
     private String id;
-    private int amount;
+    private long amount;
     private String from;
     private String to;
     private String date;
 
-    public Transfer(String id, String from, String to, int amount, String date) {
+    public Transfer(String id, String from, String to, long amount, String date) {
         this.id = id;
         this.amount = amount;
         this.from = from;
@@ -50,11 +48,11 @@ public class Transfer {
         this.date = date;
     }
 
-    public int getAmount() {
+    public long getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(long amount) {
         this.amount = amount;
     }
 }

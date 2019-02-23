@@ -23,7 +23,7 @@ public class TransferPresenter {
         mAuth = auth;
     }
 
-    public void transfer(final String from, final String to, final int amount){
+    public void transfer(final String from, final String to, final long amount){
         DatabaseReference mTransferRef = mDatabase.child(Transfer.PATH_NAME);
         final DatabaseReference mWalletRef = mDatabase.child(Wallet.PATH_NAME);
         String id = mTransferRef.push().getKey();
@@ -34,7 +34,7 @@ public class TransferPresenter {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        int senderAmount = (int) dataSnapshot.getValue();
+                        long senderAmount = (long) dataSnapshot.getValue();
                         mWalletRef.child(from).child("amount").setValue(senderAmount - amount);
                     }
 
@@ -47,7 +47,7 @@ public class TransferPresenter {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        int receiverAmount = (int) dataSnapshot.getValue();
+                        long receiverAmount = (long) dataSnapshot.getValue();
                         mWalletRef.child(to).child("amount").setValue(receiverAmount + amount);
                     }
 
