@@ -31,6 +31,7 @@ public class GroupOverviewActivity extends AppCompatActivity {
     private TextView mNameTextView;
     private TextView mCashTagTextView;
     private ImageView mHistoryImageButton;
+    private ImageView mEventImageButton;
     public final static int QR_REQUEST = 0;
 
     @Override
@@ -45,6 +46,7 @@ public class GroupOverviewActivity extends AppCompatActivity {
         final String groupId = intent.getStringExtra("groupId");
 
         //Get reference to view
+        mEventImageButton = findViewById(R.id.iv_overview_group_event);
         mNameTextView = findViewById(R.id.tv_overview_group_title);
         mCashTagTextView = findViewById(R.id.tv_overview_group_cashtag_value);
         mBalanceTextView = findViewById(R.id.tv_overview_group_balance_value);
@@ -102,6 +104,15 @@ public class GroupOverviewActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
+
+        mEventImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(GroupOverviewActivity.this, EventListActivity.class);
+                intent1.putExtra("groupId", groupId);
+                startActivity(intent1);
+            }
+        });
     }
 
     @Override
@@ -122,7 +133,7 @@ public class GroupOverviewActivity extends AppCompatActivity {
         return drawableResourceId;
     }
 
-    public void initializeButtons(){
+    public void initializeButtons() {
         // Get the resource from the XML file
         String[] overviewButtonImages = getResources().getStringArray(R.array.overview_buttons_img);
         String[] overviewButtonResources = getResources().getStringArray(R.array.overview_buttons_resources);
@@ -140,9 +151,9 @@ public class GroupOverviewActivity extends AppCompatActivity {
 
     }
 
-    public void handleTransaction(View view){
-        switch(view.getId()){
-            case R.id.iv_overview_group_qr :
+    public void handleTransaction(View view) {
+        switch (view.getId()) {
+            case R.id.iv_overview_group_qr:
                 IntentIntegrator scanIntegrator = new IntentIntegrator(com.ivanjt.cashtroops.GroupOverviewActivity.this);
                 scanIntegrator.setPrompt("Scan QR Cashtag");
                 scanIntegrator.setBeepEnabled(true);
@@ -151,7 +162,6 @@ public class GroupOverviewActivity extends AppCompatActivity {
                 scanIntegrator.setOrientationLocked(true);
                 scanIntegrator.setBarcodeImageEnabled(true);
                 scanIntegrator.initiateScan();
-//                startActivityForResult(scanIntegrator.createScanIntent(), QR_REQUEST);
                 break;
             case R.id.iv_overview_group_deposit:
 
