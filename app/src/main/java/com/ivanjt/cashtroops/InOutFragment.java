@@ -3,6 +3,7 @@ package com.ivanjt.cashtroops;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -93,6 +95,7 @@ public class InOutFragment extends DialogFragment {
                 if(mType.equals("deposit")){
                     Log.d("InOutFragment", amount.toString());
                     presenter.transfer(mUserCashtag, mGroupCashtag, amount);
+                    Toast.makeText(getContext(), "Deposit Successful", Toast.LENGTH_LONG).show();
                 }
                 else if(mType.equals("withdraw")) {
                     Log.d("InOutFragment", mGroupCashtag);
@@ -102,9 +105,10 @@ public class InOutFragment extends DialogFragment {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     if(amount < (long)dataSnapshot.getValue()){
                                         presenter.transfer(mGroupCashtag, mUserCashtag, amount);
+                                        Toast.makeText(getContext(), "Withdraw Successful", Toast.LENGTH_LONG).show();
                                     }
                                     else{
-
+                                        Toast.makeText(getContext(), "Transaction Failed: Withdraw Limit Exceeded", Toast.LENGTH_LONG).show();
                                     }
                                 }
 
@@ -125,6 +129,7 @@ public class InOutFragment extends DialogFragment {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
+                Toast.makeText(getContext(), "Transaction Cancelled", Toast.LENGTH_LONG).show();
             }
         });
 
