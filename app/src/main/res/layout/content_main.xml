@@ -1,218 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-
-    <ImageView
-        android:id="@+id/iv_overview_account_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_large"
-        android:background="@drawable/holder_profile_picture"
-        android:layout_gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <!-- CASHTAG -->
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_cashtag"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_medium"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        card_view:cardUseCompatPadding="true"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="6dp"
-        card_view:cardMaxElevation="10dp"
-        card_view:contentPadding="10dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <android.support.constraint.ConstraintLayout
+
+        <ImageView
+            android:id="@+id/iv_overview_account_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@drawable/holder_profile_picture"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <!-- CASHTAG -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_cashtag"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardElevation="6dp"
+            card_view:cardMaxElevation="10dp"
+            card_view:contentPadding="10dp">
 
-            <!-- CARD TITLE -->
-            <TextView
-                android:id="@+id/tv_cashtag_title"
-                style="@style/LinotteHeading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:text="Cashtag"/>
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <View
-                android:id="@+id/dvd_cashtag"
-                style="@style/DividerThin"
-                app:layout_constraintTop_toBottomOf="@id/tv_cashtag_title"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                <!-- CARD TITLE -->
+                <TextView
+                    android:id="@+id/tv_cashtag_title"
+                    style="@style/LinotteHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="Cashtag"/>
+
+                <View
+                    android:id="@+id/dvd_cashtag"
+                    style="@style/DividerThin"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cashtag_title"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
 
 
 
-            <!-- VALUE -->
-            <TextView
-                android:id="@+id/tv_light_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="$ivanjonathan"
-                android:textSize="@dimen/text_xlarge"
-                app:layout_constraintTop_toTopOf="@id/iv_cashtag"
-                app:layout_constraintBottom_toBottomOf="@id/iv_cashtag"
-                app:layout_constraintLeft_toLeftOf="parent" />
+                <!-- VALUE -->
+                <TextView
+                    android:id="@+id/tv_light_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ivanjonathan"
+                    android:textSize="@dimen/text_xlarge"
+                    app:layout_constraintTop_toTopOf="@id/iv_cashtag"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_cashtag"
+                    app:layout_constraintLeft_toLeftOf="parent" />
 
-            <ImageView
-                android:id="@+id/iv_cashtag"
-                android:layout_width="@dimen/image_overview"
-                android:layout_height="@dimen/image_overview"
-                android:layout_margin="@dimen/margin_medium"
-                android:src="@drawable/ic_dollar_grey"
-                app:layout_constraintTop_toBottomOf="@id/dvd_cashtag"
-                app:layout_constraintRight_toRightOf="parent" />
+                <ImageView
+                    android:id="@+id/iv_cashtag"
+                    android:layout_width="@dimen/image_overview"
+                    android:layout_height="@dimen/image_overview"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:src="@drawable/ic_dollar_grey"
+                    app:layout_constraintTop_toBottomOf="@id/dvd_cashtag"
+                    app:layout_constraintRight_toRightOf="parent" />
 
-        </android.support.constraint.ConstraintLayout>
-    </android.support.v7.widget.CardView>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
 
-    <!-- WALLET -->
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_wallet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_medium"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        card_view:cardUseCompatPadding="true"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="6dp"
-        card_view:cardMaxElevation="10dp"
-        card_view:contentPadding="10dp">
-
-        <android.support.constraint.ConstraintLayout
+        <!-- WALLET -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_wallet"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardElevation="6dp"
+            card_view:cardMaxElevation="10dp"
+            card_view:contentPadding="10dp">
 
-            <!-- CARD TITLE -->
-            <TextView
-                android:id="@+id/tv_wallet_title"
-                style="@style/LinotteHeading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:text="Wallet"/>
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <View
-                android:id="@+id/dvd_wallet"
-                style="@style/DividerThin"
-                app:layout_constraintTop_toBottomOf="@id/tv_wallet_title"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                <!-- CARD TITLE -->
+                <TextView
+                    android:id="@+id/tv_wallet_title"
+                    style="@style/LinotteHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="Wallet"/>
+
+                <View
+                    android:id="@+id/dvd_wallet"
+                    style="@style/DividerThin"
+                    app:layout_constraintTop_toBottomOf="@id/tv_wallet_title"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
 
 
 
-            <!-- VALUE -->
-            <TextView
-                android:id="@+id/tv_wallet_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rp 100000"
-                android:textSize="@dimen/text_xlarge"
-                app:layout_constraintTop_toTopOf="@id/iv_wallet"
-                app:layout_constraintBottom_toBottomOf="@id/iv_wallet"
-                app:layout_constraintLeft_toLeftOf="parent" />
+                <!-- VALUE -->
+                <TextView
+                    android:id="@+id/tv_wallet_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 100000"
+                    android:textSize="@dimen/text_xlarge"
+                    app:layout_constraintTop_toTopOf="@id/iv_wallet"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_wallet"
+                    app:layout_constraintLeft_toLeftOf="parent" />
 
-            <ImageView
-                android:id="@+id/iv_wallet"
-                android:layout_width="@dimen/image_overview"
-                android:layout_height="@dimen/image_overview"
-                android:layout_margin="@dimen/margin_medium"
-                android:src="@drawable/ic_wallet_grey"
-                app:layout_constraintTop_toBottomOf="@id/dvd_wallet"
-                app:layout_constraintRight_toRightOf="parent" />
+                <ImageView
+                    android:id="@+id/iv_wallet"
+                    android:layout_width="@dimen/image_overview"
+                    android:layout_height="@dimen/image_overview"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:src="@drawable/ic_wallet_grey"
+                    app:layout_constraintTop_toBottomOf="@id/dvd_wallet"
+                    app:layout_constraintRight_toRightOf="parent" />
 
-        </android.support.constraint.ConstraintLayout>
-    </android.support.v7.widget.CardView>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
 
-    <!-- Phone Number -->
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_phone_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_medium"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        card_view:cardUseCompatPadding="true"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="6dp"
-        card_view:cardMaxElevation="10dp"
-        card_view:contentPadding="10dp">
-
-        <android.support.constraint.ConstraintLayout
+        <!-- Phone Number -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_phone_number"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardElevation="6dp"
+            card_view:cardMaxElevation="10dp"
+            card_view:contentPadding="10dp">
 
-            <!-- CARD TITLE -->
-            <TextView
-                android:id="@+id/tv_phone_number_title"
-                style="@style/LinotteHeading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:text="Phone Number"/>
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <View
-                android:id="@+id/dvd_phone_number"
-                style="@style/DividerThin"
-                app:layout_constraintTop_toBottomOf="@id/tv_phone_number_title"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                <!-- CARD TITLE -->
+                <TextView
+                    android:id="@+id/tv_phone_number_title"
+                    style="@style/LinotteHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="Phone Number"/>
+
+                <View
+                    android:id="@+id/dvd_phone_number"
+                    style="@style/DividerThin"
+                    app:layout_constraintTop_toBottomOf="@id/tv_phone_number_title"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
 
 
 
-            <!-- VALUE -->
-            <TextView
-                android:id="@+id/tv_phone_number_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12345"
-                android:textSize="@dimen/text_xlarge"
-                app:layout_constraintTop_toTopOf="@id/iv_phone_number"
-                app:layout_constraintBottom_toBottomOf="@id/iv_phone_number"
-                app:layout_constraintLeft_toLeftOf="parent" />
+                <!-- VALUE -->
+                <TextView
+                    android:id="@+id/tv_phone_number_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12345"
+                    android:textSize="@dimen/text_xlarge"
+                    app:layout_constraintTop_toTopOf="@id/iv_phone_number"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_phone_number"
+                    app:layout_constraintLeft_toLeftOf="parent" />
 
-            <ImageView
-                android:id="@+id/iv_phone_number"
-                android:layout_width="@dimen/image_overview"
-                android:layout_height="@dimen/image_overview"
-                android:layout_margin="@dimen/margin_medium"
-                android:src="@drawable/ic_phone_old_grey"
-                app:layout_constraintTop_toBottomOf="@id/dvd_phone_number"
-                app:layout_constraintRight_toRightOf="parent" />
+                <ImageView
+                    android:id="@+id/iv_phone_number"
+                    android:layout_width="@dimen/image_overview"
+                    android:layout_height="@dimen/image_overview"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:src="@drawable/ic_phone_old_grey"
+                    app:layout_constraintTop_toBottomOf="@id/dvd_phone_number"
+                    app:layout_constraintRight_toRightOf="parent" />
 
-        </android.support.constraint.ConstraintLayout>
-    </android.support.v7.widget.CardView>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
 
-    <!-- LOGO JENIUS -->
-    <ImageView
-        android:layout_width="@dimen/image_large"
-        android:layout_height="@dimen/image_medium"
-        android:layout_gravity="center"
-        android:src="@drawable/img_jenius"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        <!-- LOGO JENIUS -->
+        <ImageView
+            android:layout_width="@dimen/image_large"
+            android:layout_height="@dimen/image_medium"
+            android:layout_gravity="center"
+            android:src="@drawable/img_jenius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
