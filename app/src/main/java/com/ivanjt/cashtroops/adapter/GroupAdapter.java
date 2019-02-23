@@ -51,18 +51,21 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupViewHol
             mGroupNameTextView = itemView.findViewById(R.id.tv_group_name);
             mMembersTextView = itemView.findViewById(R.id.tv_group_member_numbers);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(mContext, GroupOverviewActivity.class);
-                    mContext.startActivity(intent);
-                }
-            });
         }
 
         void bind(Group group) {
             mGroupNameTextView.setText(group.getName());
             mMembersTextView.setText(group.getMembers().size() + " Anggota");
+
+            final int i = getAdapterPosition();
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, GroupOverviewActivity.class);
+                    intent.putExtra("groupCashTag", mGroups.get(i).getCashTag());
+                    mContext.startActivity(intent);
+                }
+            });
         }
     }
 }
