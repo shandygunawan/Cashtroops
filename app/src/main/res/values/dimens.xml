@@ -30,4 +30,8 @@ x
     <dimen name="auth_fab_margin">16dp</dimen>
     <dimen name="auth_logo_w_h">100dp</dimen>
     <dimen name="register_top_margin">50dip</dimen>
+
+    <!-- RADIUS -->
+    <dimen name="radius_small">10dp</dimen>
+
 </resources>

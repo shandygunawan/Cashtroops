@@ -1,6 +1,7 @@
 package com.ivanjt.cashtroops;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -95,4 +96,10 @@ public class GroupOverviewActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void initializeButtons(){
+        // Get the resource from the XML file
+        String[] overviewButtonResources = getResources().getStringArray(R.array.overview_buttons);
+    }
+
 }

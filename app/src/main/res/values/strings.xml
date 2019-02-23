@@ -7,6 +7,8 @@
     <string name="title_activity_group_create">Create a Group</string>
     <string name="title_activity_group_history">History</string>
     <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="title_activity_group_invite">GroupInviteActivity</string>
+    <string name="title_activity_create_event">CreateEventActivity</string>
 
     <!-- main -->
     <string name="overview">Overview</string>
@@ -23,7 +25,6 @@
     <string name="register_button">Register</string>
     <string name="minimum_password">Your password is too short, try again!</string>
     <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
-
 
     <!--NavigationACTIVITY-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -73,7 +74,17 @@
         <item>IDR</item>
         <item>USD</item>
     </string-array>
-    <string name="title_activity_group_invite">GroupInviteActivity</string>
-    <string name="title_activity_create_event">CreateEventActivity</string>
+
+    <string-array name="overview_buttons">
+        <item>@drawable/img_profile</item>
+        <item>@drawable/img_invite</item>
+        <item>@drawable/img_members</item>
+        <item>@drawable/img_deposit</item>
+        <item>@drawable/img_event</item>
+        <item>@drawable/img_history</item>
+        <item>@drawable/img_withdraw</item>
+        <item>@drawable/img_qr</item>
+        <item>@drawable/img_settings</item>
+    </string-array>
 
 </resources>
