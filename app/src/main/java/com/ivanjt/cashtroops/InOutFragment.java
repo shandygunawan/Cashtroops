@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -15,13 +16,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.ivanjt.cashtroops.model.Group;
 import com.ivanjt.cashtroops.presenter.TransferPresenter;
 
 /**
  * Fragment for inout dialog
  */
 public class InOutFragment extends DialogFragment {
-
+    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     private String mType; // "deposit" or "withdraw"
     private String mUserCashtag;
     private String mGroupCashtag;
@@ -64,6 +71,9 @@ public class InOutFragment extends DialogFragment {
         else if(mType.equals("withdraw")) {
             dialog_title.setText("Withdraw from " + mGroupCashtag);
         }
+        else if(mType.equals("QR")){
+            dialog_title.setText("Group payment to " + mUserCashtag);
+        }
         builder.setView(mDialogView);
 
 
@@ -74,15 +84,34 @@ public class InOutFragment extends DialogFragment {
                 // add transfer here
 //                dialog.cancel();
                 auth = FirebaseAuth.getInstance();
-                TransferPresenter presenter = new TransferPresenter(auth);
+                final TransferPresenter presenter = new TransferPresenter(auth);
 
-                Integer amount = Integer.valueOf(et_amount.getText().toString());
+                final Integer amount = Integer.valueOf(et_amount.getText().toString());
 
                 if(mType.equals("deposit")){
                     Log.d("InOutFragment", amount.toString());
                     presenter.transfer(mUserCashtag, mGroupCashtag, amount);
                 }
                 else if(mType.equals("withdraw")) {
+                    mDatabase.child(Group.PATH_NAME).child(mGroupCashtag).child("withdrawLimit")
+                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if(amount < (long)dataSnapshot.getValue()){
+                                        presenter.transfer(mGroupCashtag, mUserCashtag, amount);
+                                    }
+                                    else{
+
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                }
+                else if(mType.equals("QR")){
                     presenter.transfer(mGroupCashtag, mUserCashtag, amount);
                 }
                 dialog.cancel();

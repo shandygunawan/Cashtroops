@@ -212,6 +212,14 @@ public class GroupOverviewActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        Toast.makeText(this, scanningResult.getContents(), Toast.LENGTH_SHORT).show();
+        String id = scanningResult.getContents();
+        String groupCashtag = mCashTagTextView.getText().toString();
+        String[] groupCashtagArray = groupCashtag.split("@");
+        depositFragment = new InOutFragment();
+        depositFragment.setType("QR");
+        depositFragment.setUserCashtag(id);
+        depositFragment.setGroupCashtag(groupCashtagArray[1]);
+        depositFragment.show(getSupportFragmentManager(), "QR");
+
     }
 }
