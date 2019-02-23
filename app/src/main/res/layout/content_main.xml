@@ -14,31 +14,19 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-        <ImageView
-            android:id="@+id/iv_overview_account_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_large"
-            android:background="@drawable/holder_profile_picture"
-            android:layout_gravity="center"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
-
         <!-- CASHTAG -->
         <android.support.v7.widget.CardView
             android:id="@+id/cv_cashtag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_medium"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            card_view:cardUseCompatPadding="true"
+            app:layout_constraintTop_toTopOf="parent"
             card_view:cardCornerRadius="5dp"
             card_view:cardElevation="6dp"
             card_view:cardMaxElevation="10dp"
+            card_view:cardUseCompatPadding="true"
             card_view:contentPadding="10dp">
 
             <android.support.constraint.ConstraintLayout
@@ -51,17 +39,16 @@
                     style="@style/LinotteHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="Cashtag"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    android:text="Cashtag"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <View
                     android:id="@+id/dvd_cashtag"
                     style="@style/DividerThin"
-                    app:layout_constraintTop_toBottomOf="@id/tv_cashtag_title"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"/>
-
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cashtag_title" />
 
 
                 <!-- VALUE -->
@@ -71,9 +58,9 @@
                     android:layout_height="wrap_content"
                     android:text="$ivanjonathan"
                     android:textSize="@dimen/text_xlarge"
-                    app:layout_constraintTop_toTopOf="@id/iv_cashtag"
                     app:layout_constraintBottom_toBottomOf="@id/iv_cashtag"
-                    app:layout_constraintLeft_toLeftOf="parent" />
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_cashtag" />
 
                 <ImageView
                     android:id="@+id/iv_cashtag"
@@ -81,8 +68,8 @@
                     android:layout_height="@dimen/image_overview"
                     android:layout_margin="@dimen/margin_medium"
                     android:src="@drawable/ic_dollar_grey"
-                    app:layout_constraintTop_toBottomOf="@id/dvd_cashtag"
-                    app:layout_constraintRight_toRightOf="parent" />
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dvd_cashtag" />
 
             </android.support.constraint.ConstraintLayout>
         </android.support.v7.widget.CardView>
@@ -93,13 +80,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_medium"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            card_view:cardUseCompatPadding="true"
+            app:layout_constraintTop_toTopOf="parent"
             card_view:cardCornerRadius="5dp"
             card_view:cardElevation="6dp"
             card_view:cardMaxElevation="10dp"
+            card_view:cardUseCompatPadding="true"
             card_view:contentPadding="10dp">
 
             <android.support.constraint.ConstraintLayout
@@ -112,17 +99,16 @@
                     style="@style/LinotteHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="Wallet"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    android:text="Wallet"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <View
                     android:id="@+id/dvd_wallet"
                     style="@style/DividerThin"
-                    app:layout_constraintTop_toBottomOf="@id/tv_wallet_title"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"/>
-
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_wallet_title" />
 
 
                 <!-- VALUE -->
@@ -132,9 +118,9 @@
                     android:layout_height="wrap_content"
                     android:text="Rp 100000"
                     android:textSize="@dimen/text_xlarge"
-                    app:layout_constraintTop_toTopOf="@id/iv_wallet"
                     app:layout_constraintBottom_toBottomOf="@id/iv_wallet"
-                    app:layout_constraintLeft_toLeftOf="parent" />
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_wallet" />
 
                 <ImageView
                     android:id="@+id/iv_wallet"
@@ -142,8 +128,8 @@
                     android:layout_height="@dimen/image_overview"
                     android:layout_margin="@dimen/margin_medium"
                     android:src="@drawable/ic_wallet_grey"
-                    app:layout_constraintTop_toBottomOf="@id/dvd_wallet"
-                    app:layout_constraintRight_toRightOf="parent" />
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dvd_wallet" />
 
             </android.support.constraint.ConstraintLayout>
         </android.support.v7.widget.CardView>
@@ -154,13 +140,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_medium"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            card_view:cardUseCompatPadding="true"
+            app:layout_constraintTop_toTopOf="parent"
             card_view:cardCornerRadius="5dp"
             card_view:cardElevation="6dp"
             card_view:cardMaxElevation="10dp"
+            card_view:cardUseCompatPadding="true"
             card_view:contentPadding="10dp">
 
             <android.support.constraint.ConstraintLayout
@@ -173,17 +159,16 @@
                     style="@style/LinotteHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="Phone Number"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    android:text="Phone Number"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <View
                     android:id="@+id/dvd_phone_number"
                     style="@style/DividerThin"
-                    app:layout_constraintTop_toBottomOf="@id/tv_phone_number_title"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"/>
-
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_phone_number_title" />
 
 
                 <!-- VALUE -->
@@ -193,9 +178,9 @@
                     android:layout_height="wrap_content"
                     android:text="12345"
                     android:textSize="@dimen/text_xlarge"
-                    app:layout_constraintTop_toTopOf="@id/iv_phone_number"
                     app:layout_constraintBottom_toBottomOf="@id/iv_phone_number"
-                    app:layout_constraintLeft_toLeftOf="parent" />
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_phone_number" />
 
                 <ImageView
                     android:id="@+id/iv_phone_number"
@@ -203,8 +188,8 @@
                     android:layout_height="@dimen/image_overview"
                     android:layout_margin="@dimen/margin_medium"
                     android:src="@drawable/ic_phone_old_grey"
-                    app:layout_constraintTop_toBottomOf="@id/dvd_phone_number"
-                    app:layout_constraintRight_toRightOf="parent" />
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dvd_phone_number" />
 
             </android.support.constraint.ConstraintLayout>
         </android.support.v7.widget.CardView>
@@ -217,7 +202,7 @@
             android:src="@drawable/img_jenius"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent" />
 
     </LinearLayout>
 </ScrollView>

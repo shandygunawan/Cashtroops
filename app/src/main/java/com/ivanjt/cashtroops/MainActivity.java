@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity
         NavigationView mNavigationView = findViewById(R.id.nav_view);
         View mHeader = mNavigationView.getHeaderView(0);
         final TextView mDisplayNameTextView = mHeader.findViewById(R.id.tv_display_name);
-        final TextView mBalanceTextView = mHeader.findViewById(R.id.tv_wallet_balance);
-        final TextView mCashTagTextView = mHeader.findViewById(R.id.tv_cashtag);
-        final TextView mPhoneNumberTextView = mHeader.findViewById(R.id.tv_phone_number);
+        final TextView mBalanceTextView = findViewById(R.id.tv_wallet_balance);
+        final TextView mCashTagTextView = findViewById(R.id.tv_cashtag);
+        final TextView mPhoneNumberTextView = findViewById(R.id.tv_phone_number);
         final TextView mEmailTextView = mHeader.findViewById(R.id.tv_email);
 
         //Set toolbar
