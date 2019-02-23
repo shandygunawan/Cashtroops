@@ -129,7 +129,7 @@
 
             <!-- Edit Text -->
             <EditText
-                android:id="@+id/et_event_create_date"
+                android:id="@+id/et_event_create_budget"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter budget here"

@@ -1,12 +1,10 @@
 package com.ivanjt.cashtroops.model;
 
-import java.util.Date;
-
 public class Event {
     public static final String PATH_NAME = "events";
     private String id;
     private String groupId;
-    private Date date;
+    private String date;
     private long targetAmount;
     private String title;
     private String description;
@@ -14,7 +12,7 @@ public class Event {
     public Event() {
     }
 
-    public Event(String id, String groupId, Date date, long targetAmount, String title, String description) {
+    public Event(String id, String groupId, String date, long targetAmount, String title, String description) {
         this.id = id;
         this.groupId = groupId;
         this.date = date;
@@ -39,11 +37,11 @@ public class Event {
         this.groupId = groupId;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
