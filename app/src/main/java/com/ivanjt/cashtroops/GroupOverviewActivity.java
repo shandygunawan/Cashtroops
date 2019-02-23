@@ -1,7 +1,6 @@
 package com.ivanjt.cashtroops;
 
 import android.content.Intent;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -151,7 +150,8 @@ public class GroupOverviewActivity extends AppCompatActivity {
                 scanIntegrator.setCaptureActivity(CaptureActivity.class);
                 scanIntegrator.setOrientationLocked(true);
                 scanIntegrator.setBarcodeImageEnabled(true);
-                startActivityForResult(scanIntegrator.createScanIntent(), QR_REQUEST);
+                scanIntegrator.initiateScan();
+//                startActivityForResult(scanIntegrator.createScanIntent(), QR_REQUEST);
                 break;
             case R.id.iv_overview_group_deposit:
 
@@ -164,19 +164,7 @@ public class GroupOverviewActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case QR_REQUEST :
-                String to;
-                IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-                if (scanningResult != null) {
-                    if (scanningResult.getContents() != null) {
-                        to = scanningResult.getContents();
-                        Toast.makeText(this, to, Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-                break;
-        }
+        IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        Toast.makeText(this, scanningResult.getContents(), Toast.LENGTH_SHORT).show();
     }
 }
