@@ -4,16 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.ivanjt.cashtroops.model.Group;
+import com.ivanjt.cashtroops.model.User;
 import com.ivanjt.cashtroops.model.Wallet;
 import com.journeyapps.barcodescanner.CaptureActivity;
 
@@ -32,7 +36,10 @@ public class GroupOverviewActivity extends AppCompatActivity {
     private TextView mCashTagTextView;
     private ImageView mHistoryImageButton;
     private ImageView mEventImageButton;
+    private String uid;
+    private User user;
     public final static int QR_REQUEST = 0;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,21 @@ public class GroupOverviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_group_overview);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Get uid
+        uid = mAuth.getUid();
+        mDatabase.child(User.PATH_NAME).child(uid).
+                addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        user = dataSnapshot.getValue(User.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
 
         //Get intent
         final Intent intent = getIntent();
@@ -164,6 +186,11 @@ public class GroupOverviewActivity extends AppCompatActivity {
                 scanIntegrator.initiateScan();
                 break;
             case R.id.iv_overview_group_deposit:
+                InOutFragment depositFragment = new InOutFragment();
+                depositFragment.setType("deposit");
+                depositFragment.setUserCashtag(user.getCashTag());
+                depositFragment.setGroupCashtag(mCashTagTextView.getText().toString());
+                depositFragment.show(getSupportFragmentManager(), "Deposit");
 
                 break;
             case R.id.iv_overview_group_withdraw:

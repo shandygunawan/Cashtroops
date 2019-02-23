@@ -10,20 +10,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ivanjt.cashtroops.model.Transfer;
 import com.ivanjt.cashtroops.model.Wallet;
-import com.ivanjt.cashtroops.view.TransferView;
 
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TransferPresenter {
-    private TransferView transferView;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
-    public TransferPresenter(TransferView view, FirebaseAuth auth) {
+    public TransferPresenter(FirebaseAuth auth) {
         mAuth = auth;
-        transferView = view;
     }
 
     public void transfer(final String from, final String to, final int amount){
