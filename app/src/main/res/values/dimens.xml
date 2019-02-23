@@ -8,10 +8,12 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <!-- TEXT SIZES -->
+    <dimen name="text_xlarge">30sp</dimen>
     <dimen name="text_heading">20sp</dimen>
     <dimen name="text_caption">14sp</dimen>
 
     <!-- MARGIN SIZES -->
+    <dimen name="margin_small">5dp</dimen>
     <dimen name="margin_medium">10dp</dimen>
     <dimen name="margin_large">20dp</dimen>
 
@@ -19,6 +21,7 @@
     <dimen name="image_small">50dp</dimen>
     <dimen name="image_medium">70dp</dimen>
     <dimen name="image_large">100dp</dimen>
+    <dimen name="image_invite">200dp</dimen>
 
     <!-- Authentication screen -->
     <dimen name="auth_horizontal_margin">16dp</dimen>

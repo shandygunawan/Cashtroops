@@ -73,5 +73,6 @@
         <item>IDR</item>
         <item>USD</item>
     </string-array>
+    <string name="title_activity_group_invite">GroupInviteActivity</string>
 
 </resources>
