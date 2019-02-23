@@ -187,7 +187,7 @@ public class GroupOverviewActivity extends AppCompatActivity {
                 scanIntegrator.setPrompt("Scan QR Cashtag");
                 scanIntegrator.setBeepEnabled(true);
                 scanIntegrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-                scanIntegrator.setCaptureActivity(CaptureActivity.class);
+                scanIntegrator.setCaptureActivity(CaptureActivityPortrait.class);
                 scanIntegrator.setOrientationLocked(true);
                 scanIntegrator.setBarcodeImageEnabled(true);
                 scanIntegrator.initiateScan();
