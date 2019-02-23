@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "994818260059",
+    "firebase_url": "https://cashtroops-c48c9.firebaseio.com",
+    "project_id": "cashtroops-c48c9",
+    "storage_bucket": "cashtroops-c48c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994818260059:android:b9b59376de15b954",
+        "android_client_info": {
+          "package_name": "com.ivanjt.cashtroops"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994818260059-cfcsovbsj25ud5if64thpn86ob67lhdi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ivanjt.cashtroops",
+            "certificate_hash": "01d175092d148c95a6a88442fc03afe3873f39f3"
+          }
+        },
+        {
+          "client_id": "994818260059-43qbgj6ina4j773nlp7cu8iikcddr185.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQlS4SzksluYztJ57Us89Z3i8GiduzEas"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994818260059-43qbgj6ina4j773nlp7cu8iikcddr185.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

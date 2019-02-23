@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_medium"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".GroupCreateActivity"
+    tools:showIn="@layout/activity_group_create">
+
+    <!-- GROUP'S PROFILE PICTURE -->
+    <ImageView
+        android:id="@+id/iv_group_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="Profile picture for a group account." />
+
+    <TextView
+        style="@style/LinotteHeading"
+        android:id="@+id/tv_choose_group_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Group's Picture"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:layout_constraintTop_toTopOf="@id/iv_group_image"
+        app:layout_constraintLeft_toRightOf="@id/iv_group_image" />
+
+    <Button
+        android:id="@+id/bt_use_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/margin_medium"
+        android:textColor="#FFFF"
+        app:layout_constraintTop_toBottomOf="@id/tv_choose_group_picture"
+        app:layout_constraintLeft_toRightOf="@id/iv_group_image"
+        android:text="Use your camera" />
+
+    <Button
+        android:id="@+id/bt_upload_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/margin_medium"
+        android:textColor="#FFFF"
+        app:layout_constraintTop_toBottomOf="@id/bt_use_camera"
+        app:layout_constraintLeft_toRightOf="@id/iv_group_image"
+        android:text="Upload an image" />
+
+    <View
+        android:id="@+id/vw_group_profile_picture"
+        style="@style/MediumSpace"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@id/iv_group_image"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- GROUP'S NAME -->
+    <TextView
+        style="@style/LinotteHeading"
+        android:id="@+id/tv_group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="Group Name"
+        app:layout_constraintTop_toBottomOf="@id/vw_group_profile_picture"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <EditText
+        android:id="@+id/et_group_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_group_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:hint="Enter your group's name here." />
+
+    <View
+        android:id="@+id/vw_group_name"
+        style="@style/MediumSpace"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@id/et_group_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- AUTO DEBET -->
+    <TextView
+        style="@style/LinotteHeading"
+        android:id="@+id/tv_auto_deposit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="Auto Deposit Every  "
+        app:layout_constraintTop_toBottomOf="@id/vw_group_name"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_auto_deposit_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_caption"
+        android:text="31st will change to 28th or 30th for months with 28 or 30 days"
+        app:layout_constraintTop_toBottomOf="@id/tv_auto_deposit"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Spinner
+        android:id="@+id/spn_deposit_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        app:layout_constraintBottom_toBottomOf="@id/tv_auto_deposit"
+        app:layout_constraintLeft_toRightOf="@id/tv_auto_deposit"></Spinner>
+
+    <View
+        android:id="@+id/vw_auto_deposit"
+        style="@style/MediumSpace"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@id/tv_auto_deposit_info"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <!-- DEPOSIT AMOUNT -->
+    <TextView
+        style="@style/LinotteHeading"
+        android:id="@+id/tv_deposit_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="Deposit Amount"
+        app:layout_constraintTop_toBottomOf="@id/vw_auto_deposit"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tv_deposit_amount">
+
+        <Spinner
+            android:id="@+id/spn_deposit_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:gravity="center_horizontal"></Spinner>
+
+        <EditText
+            android:id="@+id/et_deposit_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:hint="Enter deposit amount here" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
