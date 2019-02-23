@@ -40,6 +40,7 @@ public class GroupOverviewActivity extends AppCompatActivity {
     private User user;
     public final static int QR_REQUEST = 0;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    InOutFragment depositFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,6 +175,12 @@ public class GroupOverviewActivity extends AppCompatActivity {
     }
 
     public void handleTransaction(View view) {
+
+        // Get Group's Cashtag
+        String groupCashtag = mCashTagTextView.getText().toString();
+        String[] groupCashtagArray = groupCashtag.split("@");
+        depositFragment = new InOutFragment();
+
         switch (view.getId()) {
             case R.id.iv_overview_group_qr:
                 IntentIntegrator scanIntegrator = new IntentIntegrator(com.ivanjt.cashtroops.GroupOverviewActivity.this);
@@ -186,14 +193,17 @@ public class GroupOverviewActivity extends AppCompatActivity {
                 scanIntegrator.initiateScan();
                 break;
             case R.id.iv_overview_group_deposit:
-                InOutFragment depositFragment = new InOutFragment();
                 depositFragment.setType("deposit");
                 depositFragment.setUserCashtag(user.getCashTag());
-                depositFragment.setGroupCashtag(mCashTagTextView.getText().toString());
-                depositFragment.show(getSupportFragmentManager(), "Deposit");
+                depositFragment.setGroupCashtag(groupCashtagArray[1]);
+                depositFragment.show(getSupportFragmentManager(), "deposit");
 
                 break;
             case R.id.iv_overview_group_withdraw:
+                depositFragment.setType("withdraw");
+                depositFragment.setUserCashtag(user.getCashTag());
+                depositFragment.setGroupCashtag(groupCashtagArray[1]);
+                depositFragment.show(getSupportFragmentManager(), "withdraw");
 
                 break;
         }

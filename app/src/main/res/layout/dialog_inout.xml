@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tv_inout_type"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        style="@style/LinotteHeading"
+        android:textColor="@android:color/white"
+        android:text="InOut"/>
 
     <EditText
         android:id="@+id/et_dialog_inout_amount"

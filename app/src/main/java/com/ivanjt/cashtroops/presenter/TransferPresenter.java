@@ -31,7 +31,7 @@ public class TransferPresenter {
         String strDate = f.format(new Date());
         Transfer transfer = new Transfer(id, from , to, amount, strDate);
         mWalletRef.child(from).child("amount")
-                .addValueEventListener(new ValueEventListener() {
+                .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         long senderAmount = (long) dataSnapshot.getValue();
@@ -44,7 +44,7 @@ public class TransferPresenter {
                     }
                 });
         mWalletRef.child(to).child("amount")
-                .addValueEventListener(new ValueEventListener() {
+                .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         long receiverAmount = (long) dataSnapshot.getValue();

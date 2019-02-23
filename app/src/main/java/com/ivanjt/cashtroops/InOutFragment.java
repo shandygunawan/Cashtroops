@@ -55,9 +55,18 @@ public class InOutFragment extends DialogFragment {
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
         final View mDialogView = inflater.inflate(R.layout.dialog_inout, null);
+        TextView dialog_title = mDialogView.findViewById(R.id.tv_inout_type);
         final EditText et_amount = mDialogView.findViewById(R.id.et_dialog_inout_amount);
 
+        if(mType.equals("deposit")){
+            dialog_title.setText("Deposit to " + mGroupCashtag);
+        }
+        else if(mType.equals("withdraw")) {
+            dialog_title.setText("Withdraw from " + mGroupCashtag);
+        }
         builder.setView(mDialogView);
+
+
 
         builder.setPositiveButton("Transfer", new DialogInterface.OnClickListener() {
             @Override
@@ -73,10 +82,10 @@ public class InOutFragment extends DialogFragment {
                     Log.d("InOutFragment", amount.toString());
                     presenter.transfer(mUserCashtag, mGroupCashtag, amount);
                 }
-                else {
+                else if(mType.equals("withdraw")) {
                     presenter.transfer(mGroupCashtag, mUserCashtag, amount);
                 }
-
+                dialog.cancel();
             }
         });
 
