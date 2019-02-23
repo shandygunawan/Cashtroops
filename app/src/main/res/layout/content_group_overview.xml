@@ -1,194 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".GroupOverviewActivity"
-    tools:showIn="@layout/activity_group_overview">
+    tools:showIn="@layout/activity_group_overview"
+    android:orientation="vertical">
 
-    <!-- OVERVIEW-->
-    <TextView
-        android:id="@+id/tv_overview"
-        style="@style/LinotteHeading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/margin_medium"
-        android:paddingBottom="@dimen/margin_medium"
-        android:text="@string/overview"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/dvd_overview"
-        style="@style/DividerThick"
-        app:layout_constraintBottom_toBottomOf="@id/tv_overview"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-
-    <!-- BALANCE -->
     <ImageView
-        android:id="@+id/iv_balance"
-        android:layout_width="@dimen/image_medium"
-        android:layout_height="@dimen/image_medium"
-        android:contentDescription="@string/balance_image_desc"
-        android:paddingTop="@dimen/margin_medium"
-        android:paddingBottom="@dimen/margin_medium"
-        android:src="@drawable/balance"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dvd_overview" />
+        android:id="@+id/iv_overview_group_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_small"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:src="@drawable/img_bali"/>
 
     <TextView
-        android:id="@+id/tv_balance_title"
+        android:id="@+id/iv_overview_group_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/balance_text"
-        android:textSize="@dimen/text_heading"
-        app:layout_constraintBottom_toBottomOf="@id/iv_balance"
-        app:layout_constraintLeft_toRightOf="@id/iv_balance"
-        app:layout_constraintTop_toTopOf="@id/iv_balance" />
-
-    <TextView
-        android:id="@+id/tv_balance_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingRight="@dimen/margin_medium"
-        android:text="Rp 10.000.000,00"
-        android:textSize="@dimen/text_heading"
-        app:layout_constraintBottom_toBottomOf="@id/iv_balance"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/iv_balance" />
-
-    <View
-        android:id="@+id/dvd_balance"
-        style="@style/DividerThin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_balance" />
-
-    <!-- HISTORY PAST WEEK -->
-    <ImageView
-        android:id="@+id/iv_history"
-        android:layout_width="@dimen/image_medium"
-        android:layout_height="@dimen/image_medium"
-        android:contentDescription="@string/balance_image_desc"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:src="@drawable/history"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dvd_balance" />
-
-    <TextView
-        android:id="@+id/tv_history_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This week"
-        android:textSize="@dimen/text_heading"
-        app:layout_constraintBottom_toBottomOf="@id/iv_history"
-        app:layout_constraintLeft_toRightOf="@id/iv_history"
-        app:layout_constraintTop_toTopOf="@id/iv_history" />
-
-    <TextView
-        android:id="@+id/tv_history_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="Rp 65.000,00"
-        android:textSize="@dimen/text_heading"
-        app:layout_constraintBottom_toBottomOf="@id/iv_history"
-        app:layout_constraintEnd_toEndOf="@+id/tv_balance_amount"
-        app:layout_constraintTop_toTopOf="@id/iv_history" />
-
-    <!-- Image for this week statistic here -->
-
-    <View
-        android:id="@+id/dvd_history"
-        style="@style/DividerThick"
-        app:layout_constraintBottom_toBottomOf="@id/iv_history"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-
-    <!-- EVENT -->
-    <TextView
-        android:id="@+id/tv_next_event"
+        android:layout_gravity="center"
         style="@style/LinotteHeading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/margin_medium"
-        android:paddingBottom="@dimen/margin_medium"
-        android:text="Next Event"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/dvd_history" />
+        android:textSize="@dimen/text_xlarge"
+        android:text="Group Name"/>
 
-    <View
-        android:id="@+id/dvd_next_event"
-        style="@style/DividerThick"
-        app:layout_constraintBottom_toBottomOf="@id/tv_next_event"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:orientation="vertical"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dvd_next_event">
+        card_view:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="6dp"
+        card_view:cardMaxElevation="10dp"
+        card_view:contentPadding="10dp">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
+            <!-- Group Cashtag -->
+            <TextView
+                android:id="@+id/tv_overview_group_cashtag_title"
+                style="@style/LinotteHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="Cashtag"/>
+
+            <TextView
+                android:id="@+id/tv_overview_group_cashtag_value"
+                style="@style/LinotteHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="\@bali"/>
+
+            <View
+                android:id="@+id/space_group_cashtag"
+                style="@style/MediumSpace"
+                app:layout_constraintTop_toBottomOf="@id/tv_overview_group_cashtag_title"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+
+            <!-- GROUP INFORMATION -->
             <ImageView
-                android:id="@+id/iv_event_name"
-                android:layout_width="@dimen/image_large"
-                android:layout_height="@dimen/image_large"
-                android:layout_weight="1"
-                android:src="@drawable/airplane" />
+                android:id="@+id/iv_overview_group_information"
+                android:layout_width="@dimen/image_button"
+                android:layout_height="@dimen/image_button"
+                android:layout_marginTop="@dimen/margin_large"
+                android:src="@drawable/img_profile"
+                app:layout_constraintTop_toBottomOf="@id/tv_overview_group_cashtag_title"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Information"
+                app:layout_constraintTop_toBottomOf="@id/iv_overview_group_information"
+                app:layout_constraintLeft_toLeftOf="@id/iv_overview_group_information"
+                app:layout_constraintRight_toRightOf="@id/iv_overview_group_information"/>
 
+
+
+            <!-- INVITE MEMBER -->
             <ImageView
-                android:id="@+id/iv_event_date"
-                android:layout_width="@dimen/image_large"
-                android:layout_height="@dimen/image_large"
-                android:layout_weight="1"
-                android:src="@drawable/calendar_blue" />
+                android:id="@+id/iv_overview_group_add_member"
+                android:layout_width="@dimen/image_button"
+                android:layout_height="@dimen/image_button"
+                android:layout_marginTop="@dimen/margin_large"
+                android:src="@drawable/img_invite"
+                app:layout_constraintTop_toBottomOf="@id/tv_overview_group_cashtag_title"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Invite"
+                app:layout_constraintTop_toBottomOf="@id/iv_overview_group_add_member"
+                app:layout_constraintLeft_toLeftOf="@id/iv_overview_group_add_member"
+                app:layout_constraintRight_toRightOf="@id/iv_overview_group_add_member"/>
 
+            <!-- GROUP MEMBER -->
             <ImageView
-                android:id="@+id/iv_event_cost"
-                android:layout_width="@dimen/image_large"
-                android:layout_height="@dimen/image_large"
-                android:layout_weight="1"
-                android:src="@drawable/wallet" />
-        </LinearLayout>
+                android:id="@+id/iv_overview_group_member"
+                android:layout_width="@dimen/image_button"
+                android:layout_height="@dimen/image_button"
+                android:layout_marginTop="@dimen/margin_large"
+                android:src="@drawable/img_profile"
+                app:layout_constraintTop_toBottomOf="@id/tv_overview_group_cashtag_title"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Members"
+                app:layout_constraintTop_toBottomOf="@id/iv_overview_group_member"
+                app:layout_constraintLeft_toLeftOf="@id/iv_overview_group_member"
+                app:layout_constraintRight_toRightOf="@id/iv_overview_group_member"/>
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
 
-        <LinearLayout
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="6dp"
+        card_view:cardMaxElevation="10dp"
+        card_view:contentPadding="10dp">
+
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
+
+            <!-- Group Balance -->
+            <TextView
+                android:id="@+id/tv_overview_group_balance_title"
+                style="@style/LinotteHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="Balance"/>
 
             <TextView
-                style="@style/EventTextGreen"
-                android:text="Bali" />
+                android:id="@+id/tv_overview_group_balance_value"
+                style="@style/LinotteHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="Rp 10000"/>
 
+            <View
+                android:id="@+id/space_group_balance"
+                style="@style/MediumSpace"
+                app:layout_constraintTop_toBottomOf="@id/tv_overview_group_balance_title"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+
+            <!-- DEPOSIT -->
+            <ImageView
+                android:id="@+id/iv_overview_group_deposit"
+                android:layout_width="@dimen/image_button"
+                android:layout_height="@dimen/image_button"
+                android:layout_marginTop="@dimen/margin_large"
+                android:src="@drawable/img_deposit"
+                app:layout_constraintTop_toBottomOf="@id/tv_overview_group_balance_title"
+                app:layout_constraintLeft_toLeftOf="parent"/>
             <TextView
-                style="@style/EventTextGreen"
-                android:text="25 days" />
+                android:id="@+id/tv_overview_group_deposit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deposit"
+                app:layout_constraintTop_toBottomOf="@id/iv_overview_group_deposit"
+                app:layout_constraintLeft_toLeftOf="@id/iv_overview_group_deposit"
+                app:layout_constraintRight_toRightOf="@id/iv_overview_group_deposit"/>
 
+
+
+            <!-- Event -->
+            <ImageView
+                android:id="@+id/iv_overview_group_event"
+                android:layout_width="@dimen/image_button"
+                android:layout_height="@dimen/image_button"
+                android:layout_marginTop="@dimen/margin_large"
+                android:src="@drawable/img_event"
+                app:layout_constraintTop_toBottomOf="@id/tv_overview_group_balance_title"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
             <TextView
-                style="@style/EventTextRed"
-                android:text="- 5 million IDR" />
+                android:id="@+id/tv_overview_group_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Event"
+                app:layout_constraintTop_toBottomOf="@id/iv_overview_group_event"
+                app:layout_constraintLeft_toLeftOf="@id/iv_overview_group_event"
+                app:layout_constraintRight_toRightOf="@id/iv_overview_group_event"/>
 
-        </LinearLayout>
+            <!-- History -->
+            <ImageView
+                android:id="@+id/iv_overview_group_history"
+                android:layout_width="@dimen/image_button"
+                android:layout_height="@dimen/image_button"
+                android:layout_marginTop="@dimen/margin_large"
+                android:src="@drawable/img_history"
+                app:layout_constraintTop_toBottomOf="@id/tv_overview_group_balance_title"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <TextView
+                android:id="@+id/tv_overview_group_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="History"
+                app:layout_constraintTop_toBottomOf="@id/iv_overview_group_history"
+                app:layout_constraintLeft_toLeftOf="@id/iv_overview_group_history"
+                app:layout_constraintRight_toRightOf="@id/iv_overview_group_history"/>
 
-    </LinearLayout>
+            <!-- Withdraw -->
+            <ImageView
+                android:id="@+id/iv_overview_group_withdraw"
+                android:layout_width="@dimen/image_button"
+                android:layout_height="@dimen/image_button"
+                android:layout_marginTop="@dimen/margin_large"
+                android:src="@drawable/img_history"
+                app:layout_constraintTop_toBottomOf="@id/tv_overview_group_deposit"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Withdraw"
+                app:layout_constraintTop_toBottomOf="@id/iv_overview_group_withdraw"
+                app:layout_constraintLeft_toLeftOf="@id/iv_overview_group_withdraw"
+                app:layout_constraintRight_toRightOf="@id/iv_overview_group_withdraw"/>
 
+            <!-- QR -->
+            <ImageView
+                android:id="@+id/iv_overview_group_qr"
+                android:layout_width="@dimen/image_button"
+                android:layout_height="@dimen/image_button"
+                android:layout_marginTop="@dimen/margin_large"
+                android:src="@drawable/img_qr"
+                app:layout_constraintTop_toBottomOf="@id/tv_overview_group_event"
+                app:layout_constraintLeft_toLeftOf="@id/tv_overview_group_event"
+                app:layout_constraintRight_toRightOf="@id/tv_overview_group_event"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QR"
+                app:layout_constraintTop_toBottomOf="@id/iv_overview_group_qr"
+                app:layout_constraintLeft_toLeftOf="@id/iv_overview_group_qr"
+                app:layout_constraintRight_toRightOf="@id/iv_overview_group_qr"/>
 
-</android.support.constraint.ConstraintLayout>
+            <!-- Settings -->
+            <ImageView
+                android:id="@+id/iv_overview_group_settings"
+                android:layout_width="@dimen/image_button"
+                android:layout_height="@dimen/image_button"
+                android:layout_marginTop="@dimen/margin_large"
+                android:src="@drawable/img_settings"
+                app:layout_constraintTop_toBottomOf="@id/tv_overview_group_history"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                app:layout_constraintTop_toBottomOf="@id/iv_overview_group_settings"
+                app:layout_constraintLeft_toLeftOf="@id/iv_overview_group_settings"
+                app:layout_constraintRight_toRightOf="@id/iv_overview_group_settings"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
