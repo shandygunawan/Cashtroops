@@ -68,15 +68,6 @@ public class GroupOverviewActivity extends AppCompatActivity {
         final Intent intent = getIntent();
         final String groupId = intent.getStringExtra("groupId");
 
-        super.onCreate(savedInstanceState);
-        if (savedInstanceState != null) {
-            depositFragment = (InOutFragment) getSupportFragmentManager().getFragment(
-                    savedInstanceState, "deposit");
-        }
-        if (depositFragment == null) {
-            depositFragment = new InOutFragment();
-        }
-
         //Get reference to view
         mEventImageButton = findViewById(R.id.iv_overview_group_event);
         mNameTextView = findViewById(R.id.tv_overview_group_title);
@@ -219,12 +210,6 @@ public class GroupOverviewActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        getSupportFragmentManager().putFragment(outState, "deposit",
-                depositFragment);
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

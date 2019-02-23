@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -130,6 +132,17 @@ public class InOutFragment extends DialogFragment {
         AlertDialog dialog = builder.create();
 
         return dialog;
+    }
+
+    @Override
+    public void show(FragmentManager manager, String tag) {
+        try {
+            FragmentTransaction ft = manager.beginTransaction();
+            ft.add(this, tag);
+            ft.commitAllowingStateLoss();
+        } catch (IllegalStateException e) {
+            Log.d("ABSDIALOGFRAG", "Exception", e);
+        }
     }
 
 }
