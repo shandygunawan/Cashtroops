@@ -55,7 +55,12 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
         void bind(Transfer transfer) {
             mDepositor.setText(transfer.getFrom());
             mDate.setText(transfer.getDate());
-            mAmount.setText("Rp " + transfer.getAmount());
+
+            if (transfer.getAmount() < 0) {
+                mAmount.setText("- Rp " + (transfer.getAmount() * (-1)));
+            } else {
+                mAmount.setText("+ Rp " + transfer.getAmount());
+            }
         }
     }
 }

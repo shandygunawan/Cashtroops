@@ -8,6 +8,9 @@ public class Transfer {
     private String to;
     private String date;
 
+    public Transfer() {
+    }
+
     public Transfer(String id, String from, String to, long amount, String date) {
         this.id = id;
         this.amount = amount;

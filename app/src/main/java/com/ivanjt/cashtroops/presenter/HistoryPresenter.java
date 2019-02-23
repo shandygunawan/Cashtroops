@@ -11,7 +11,6 @@ import com.ivanjt.cashtroops.model.Transfer;
 import com.ivanjt.cashtroops.view.HistoryView;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class HistoryPresenter {
     private HistoryView view;
@@ -29,17 +28,14 @@ public class HistoryPresenter {
         transRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Map<String, Transfer> list = (Map<String, Transfer>) dataSnapshot.getValue();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Transfer transfer = snapshot.getValue(Transfer.class);
 
-                if (list != null) {
-                    for (String key : list.keySet()) {
-                        Transfer transfer = list.get(key);
-                        if (transfer.getFrom().equals(groupId) || transfer.getTo().equals(groupId)) {
-                            history.add(transfer);
-                        }
+                    if (transfer.getFrom().equals(groupId)) {
+                        transfer.setAmount(transfer.getAmount() * (-1));
                     }
+                    history.add(transfer);
                 }
-
                 view.showHistoryList(history);
             }
 
