@@ -78,7 +78,7 @@ public class InOutFragment extends DialogFragment {
 
 
 
-        builder.setPositiveButton("Transfer", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // add transfer here
@@ -93,6 +93,7 @@ public class InOutFragment extends DialogFragment {
                     presenter.transfer(mUserCashtag, mGroupCashtag, amount);
                 }
                 else if(mType.equals("withdraw")) {
+                    Log.d("InOutFragment", mGroupCashtag);
                     mDatabase.child(Group.PATH_NAME).child(mGroupCashtag).child("withdrawLimit")
                             .addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
