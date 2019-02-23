@@ -18,8 +18,7 @@
         <activity
             android:name=".CreateEventActivity"
             android:label="@string/title_activity_create_event"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".GroupInviteActivity"
             android:label="@string/title_activity_group_invite"
@@ -63,6 +62,13 @@
                 android:value=".GroupListActivity" />
         </activity>
         <activity android:name=".GroupHistoryActivity" />
+        <activity
+            android:name=".EventListActivity"
+            android:parentActivityName=".GroupOverviewActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACIVITY"
+                android:value=".GroupOverviewActivity" />
+        </activity>
     </application>
 
 </manifest>
