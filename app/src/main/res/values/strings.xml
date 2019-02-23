@@ -74,5 +74,6 @@
         <item>USD</item>
     </string-array>
     <string name="title_activity_group_invite">GroupInviteActivity</string>
+    <string name="title_activity_create_event">CreateEventActivity</string>
 
 </resources>

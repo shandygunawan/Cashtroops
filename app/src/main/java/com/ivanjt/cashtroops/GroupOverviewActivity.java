@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -34,8 +33,8 @@ public class GroupOverviewActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //Get intent
-        Intent intent = getIntent();
-        String groupId = intent.getStringExtra("groupId");
+        final Intent intent = getIntent();
+        final String groupId = intent.getStringExtra("groupId");
 
         //Get reference to view
         mNameTextView = findViewById(R.id.tv_overview_group_title);
@@ -48,8 +47,9 @@ public class GroupOverviewActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent1 = new Intent(GroupOverviewActivity.this, CreateEventActivity.class);
+                intent1.putExtra("groupId", groupId);
+                startActivity(intent1);
             }
         });
 
