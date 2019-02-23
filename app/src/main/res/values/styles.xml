@@ -8,6 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/img_splashscreen</item>
+    </style>
+
     <!-- DIVIDER -->
     <style name="DividerThin">
         <item name="android:layout_width">match_parent</item>
