@@ -75,16 +75,28 @@
         <item>USD</item>
     </string-array>
 
-    <string-array name="overview_buttons">
-        <item>@drawable/img_profile</item>
-        <item>@drawable/img_invite</item>
-        <item>@drawable/img_members</item>
-        <item>@drawable/img_deposit</item>
-        <item>@drawable/img_event</item>
-        <item>@drawable/img_history</item>
-        <item>@drawable/img_withdraw</item>
-        <item>@drawable/img_qr</item>
-        <item>@drawable/img_settings</item>
+    <string-array name="overview_buttons_img">
+        <item>img_profile</item>
+        <item>img_invite</item>
+        <item>img_members</item>
+        <item>img_deposit</item>
+        <item>img_event</item>
+        <item>img_history</item>
+        <item>img_withdraw</item>
+        <item>img_qr</item>
+        <item>img_settings</item>
+    </string-array>
+
+    <string-array name="overview_buttons_resources">
+        <item>R.id.iv_overview_group_information</item>
+        <item>R.id.iv_overview_group_add_member</item>
+        <item>R.id.iv_overview_group_member</item>
+        <item>R.id.iv_overview_group_deposit</item>
+        <item>R.id.iv_overview_group_event</item>
+        <item>R.id.iv_overview_group_history</item>
+        <item>R.id.iv_overview_group_withdraw"</item>
+        <item>R.id.iv_overview_group_qr</item>
+        <item>R.id.iv_overview_group_settings</item>
     </string-array>
 
 </resources>

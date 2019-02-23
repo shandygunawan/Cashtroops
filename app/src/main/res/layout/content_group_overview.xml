@@ -70,7 +70,6 @@
                     android:layout_width="@dimen/image_button"
                     android:layout_height="@dimen/image_button"
                     android:layout_marginTop="@dimen/margin_large"
-                    android:src="@drawable/img_profile"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview_group_cashtag_title"
                     app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -89,7 +88,6 @@
                     android:layout_width="@dimen/image_button"
                     android:layout_height="@dimen/image_button"
                     android:layout_marginTop="@dimen/margin_large"
-                    android:src="@drawable/img_invite"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview_group_cashtag_title"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
@@ -108,7 +106,6 @@
                     android:layout_width="@dimen/image_button"
                     android:layout_height="@dimen/image_button"
                     android:layout_marginTop="@dimen/margin_large"
-                    android:src="@drawable/img_profile"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview_group_cashtag_title"
                     app:layout_constraintRight_toRightOf="parent" />
 
@@ -168,7 +165,6 @@
                     android:layout_width="@dimen/image_button"
                     android:layout_height="@dimen/image_button"
                     android:layout_marginTop="@dimen/margin_large"
-                    android:src="@drawable/img_deposit"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview_group_balance_title"
                     app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -188,7 +184,6 @@
                     android:layout_width="@dimen/image_button"
                     android:layout_height="@dimen/image_button"
                     android:layout_marginTop="@dimen/margin_large"
-                    android:src="@drawable/img_event"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview_group_balance_title"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
@@ -208,7 +203,6 @@
                     android:layout_width="@dimen/image_button"
                     android:layout_height="@dimen/image_button"
                     android:layout_marginTop="@dimen/margin_large"
-                    android:src="@drawable/img_history"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview_group_balance_title"
                     app:layout_constraintRight_toRightOf="parent" />
 
@@ -227,7 +221,6 @@
                     android:layout_width="@dimen/image_button"
                     android:layout_height="@dimen/image_button"
                     android:layout_marginTop="@dimen/margin_large"
-                    android:src="@drawable/img_history"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview_group_deposit"
                     app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -245,7 +238,6 @@
                     android:layout_width="@dimen/image_button"
                     android:layout_height="@dimen/image_button"
                     android:layout_marginTop="@dimen/margin_large"
-                    android:src="@drawable/img_qr"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview_group_event"
                     app:layout_constraintLeft_toLeftOf="@id/tv_overview_group_event"
                     app:layout_constraintRight_toRightOf="@id/tv_overview_group_event" />
@@ -264,7 +256,6 @@
                     android:layout_width="@dimen/image_button"
                     android:layout_height="@dimen/image_button"
                     android:layout_marginTop="@dimen/margin_large"
-                    android:src="@drawable/img_settings"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview_group_history"
                     app:layout_constraintRight_toRightOf="parent" />
 

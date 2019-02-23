@@ -10,8 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -84,6 +86,8 @@ public class GroupOverviewActivity extends AppCompatActivity {
 
                     }
                 });
+
+        initializeButtons();
     }
 
     @Override
@@ -97,9 +101,29 @@ public class GroupOverviewActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public int getImage(String imageName) {
+
+        int drawableResourceId = this.getResources().getIdentifier(imageName, "drawable", this.getPackageName());
+
+        return drawableResourceId;
+    }
+
     public void initializeButtons(){
         // Get the resource from the XML file
-        String[] overviewButtonResources = getResources().getStringArray(R.array.overview_buttons);
+        String[] overviewButtonImages = getResources().getStringArray(R.array.overview_buttons_img);
+        String[] overviewButtonResources = getResources().getStringArray(R.array.overview_buttons_resources);
+
+        // Load images to ImageViews using Glide
+        Glide.with(this).load(getImage(overviewButtonImages[0])).into((ImageView) findViewById(R.id.iv_overview_group_information));
+        Glide.with(this).load(getImage(overviewButtonImages[1])).into((ImageView) findViewById(R.id.iv_overview_group_add_member));
+        Glide.with(this).load(getImage(overviewButtonImages[2])).into((ImageView) findViewById(R.id.iv_overview_group_member));
+        Glide.with(this).load(getImage(overviewButtonImages[3])).into((ImageView) findViewById(R.id.iv_overview_group_deposit));
+        Glide.with(this).load(getImage(overviewButtonImages[4])).into((ImageView) findViewById(R.id.iv_overview_group_event));
+        Glide.with(this).load(getImage(overviewButtonImages[5])).into((ImageView) findViewById(R.id.iv_overview_group_history));
+        Glide.with(this).load(getImage(overviewButtonImages[6])).into((ImageView) findViewById(R.id.iv_overview_group_withdraw));
+        Glide.with(this).load(getImage(overviewButtonImages[7])).into((ImageView) findViewById(R.id.iv_overview_group_qr));
+        Glide.with(this).load(getImage(overviewButtonImages[8])).into((ImageView) findViewById(R.id.iv_overview_group_settings));
+
     }
 
 }
