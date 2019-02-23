@@ -62,7 +62,7 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupViewHol
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, GroupOverviewActivity.class);
-                    intent.putExtra("groupCashTag", mGroups.get(i).getCashTag());
+                    intent.putExtra("groupId", mGroups.get(i).getId());
                     mContext.startActivity(intent);
                 }
             });

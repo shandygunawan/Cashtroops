@@ -74,26 +74,25 @@ public class GroupListActivity extends AppCompatActivity {
                 User user = dataSnapshot.getValue(User.class);
                 HashMap<String, Boolean> groups = (HashMap<String, Boolean>) user.getGroups();
 
-                groupList.clear();
                 if (groups != null) {
+                    groupList.clear();
                     for (String groupId : groups.keySet()) {
-                        if (groups.get(groupId)) {
-                            DatabaseReference groupRef = mDatabase.child(Group.PATH_NAME).child(groupId);
-                            groupRef.addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    Group group = dataSnapshot.getValue(Group.class);
-                                    groupList.add(group);
-                                }
+                        DatabaseReference groupRef = mDatabase.child(Group.PATH_NAME).child(groupId);
+                        groupRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                Group group = dataSnapshot.getValue(Group.class);
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                groupList.add(group);
+                                mAdapter.notifyDataSetChanged();
+                            }
 
-                                }
-                            });
-                        }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
                     }
-                    mAdapter.notifyDataSetChanged();
                 }
             }
 
