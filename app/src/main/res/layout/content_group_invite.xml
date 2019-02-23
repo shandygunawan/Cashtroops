@@ -8,76 +8,74 @@
     tools:context=".GroupInviteActivity"
     tools:showIn="@layout/activity_group_invite">
 
-    <TextView
-        android:id="@+id/tv_invite"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_large"
-        android:text="Invite a new member!"
-        style="@style/LinotteHeading"
-        android:textSize="@dimen/text_xlarge"
-        app:layout_constraintBottom_toTopOf="@id/iv_invite_user_image"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <ImageView
-        android:id="@+id/iv_invite_user_image"
-        android:layout_width="@dimen/image_invite"
-        android:layout_height="@dimen/image_invite"
-        android:layout_margin="@dimen/margin_large"
-        android:src="@tools:sample/avatars"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        android:orientation="vertical">
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/layout_invite_picture_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/margin_medium"
-        app:layout_constraintTop_toBottomOf="@id/iv_invite_user_image"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
-
-        <android.support.constraint.ConstraintLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent">
+            android:layout_marginBottom="@dimen/margin_large"
+            android:text="Invite a new member!"
+            style="@style/LinotteHeading"
+            android:textSize="@dimen/text_xlarge" />
+
+        <ImageView
+            android:id="@+id/iv_invite_user_image"
+            android:layout_width="@dimen/image_invite"
+            android:layout_height="@dimen/image_invite"
+            android:layout_margin="@dimen/margin_large"
+            android:layout_gravity="center"
+            android:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_invite_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/LinotteHeading"
+            android:text="Username" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/et_invite_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
                 android:hint="Enter phone number here."
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent" />
+
             <ImageView
                 android:id="@+id/bt_invite_search_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="@dimen/margin_small"
-                android:src="@drawable/ic_search_dark"
-                app:layout_constraintLeft_toRightOf="@id/et_invite_phone_number"
-                app:layout_constraintTop_toTopOf="@id/et_invite_phone_number"
-                app:layout_constraintBottom_toBottomOf="@id/et_invite_phone_number" />
+                android:src="@drawable/ic_search_dark" />
 
-        </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
 
+        <Button
+            android:id="@+id/bt_invite_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_large"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:text="Invite"
+            android:visibility="invisible"/>
 
-    </android.support.constraint.ConstraintLayout>
-
-
-    <Button
-        android:id="@+id/bt_invite_member"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="Invite"
-        app:layout_constraintTop_toBottomOf="@id/layout_invite_picture_phone"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
