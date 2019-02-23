@@ -4,16 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,7 +24,6 @@ import com.google.zxing.integration.android.IntentResult;
 import com.ivanjt.cashtroops.model.Group;
 import com.ivanjt.cashtroops.model.User;
 import com.ivanjt.cashtroops.model.Wallet;
-import com.journeyapps.barcodescanner.CaptureActivity;
 
 public class GroupOverviewActivity extends AppCompatActivity {
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -36,6 +32,7 @@ public class GroupOverviewActivity extends AppCompatActivity {
     private TextView mCashTagTextView;
     private ImageView mHistoryImageButton;
     private ImageView mEventImageButton;
+    private ImageView mMemberImageButton;
     private String uid;
     private User user;
     public final static int QR_REQUEST = 0;
@@ -74,6 +71,7 @@ public class GroupOverviewActivity extends AppCompatActivity {
         mCashTagTextView = findViewById(R.id.tv_overview_group_cashtag_value);
         mBalanceTextView = findViewById(R.id.tv_overview_group_balance_value);
         mHistoryImageButton = findViewById(R.id.iv_overview_group_history);
+        mMemberImageButton = findViewById(R.id.iv_overview_group_member);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -132,6 +130,15 @@ public class GroupOverviewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(GroupOverviewActivity.this, EventListActivity.class);
+                intent1.putExtra("groupId", groupId);
+                startActivity(intent1);
+            }
+        });
+
+        mMemberImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(GroupOverviewActivity.this, MemberListActivity.class);
                 intent1.putExtra("groupId", groupId);
                 startActivity(intent1);
             }

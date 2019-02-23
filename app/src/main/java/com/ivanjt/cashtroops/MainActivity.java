@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private FirebaseUser mUser;
     private User user;
+    private Wallet wallet;
     private DrawerLayout mDrawer;
 
     @Override
@@ -43,6 +44,9 @@ public class MainActivity extends AppCompatActivity
         NavigationView mNavigationView = findViewById(R.id.nav_view);
         View mHeader = mNavigationView.getHeaderView(0);
         final TextView mDisplayNameTextView = mHeader.findViewById(R.id.tv_display_name);
+        final TextView mBalanceTextView = mHeader.findViewById(R.id.tv_wallet_balance);
+        final TextView mCashTagTextView = mHeader.findViewById(R.id.tv_cashtag);
+        final TextView mPhoneNumberTextView = mHeader.findViewById(R.id.tv_phone_number);
         final TextView mEmailTextView = mHeader.findViewById(R.id.tv_email);
 
         //Set toolbar
@@ -66,6 +70,22 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(User.class);
+
+                final DatabaseReference walletRef = mDatabase.child(Wallet.PATH_NAME).child(user.getCashTag());
+                walletRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        wallet = dataSnapshot.getValue(Wallet.class);
+                        mBalanceTextView.setText("Rp " + wallet.getAmount());
+                        mPhoneNumberTextView.setText("+62" + user.getPhoneNumber());
+                        mCashTagTextView.setText("@" + wallet.getCashTag());
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
 
                 mDisplayNameTextView.setText(user.getName());
                 mEmailTextView.setText(mUser.getEmail());

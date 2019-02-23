@@ -6,6 +6,7 @@
     <string name="title_activity_group_list">Groups</string>
     <string name="title_activity_group_create">Create a Group</string>
     <string name="title_activity_group_history">History</string>
+    <string name="title_activity_group_member">Members</string>
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="title_activity_group_invite">GroupInviteActivity</string>
     <string name="title_activity_create_event">CreateEventActivity</string>

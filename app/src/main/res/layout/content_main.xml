@@ -66,7 +66,7 @@
 
                 <!-- VALUE -->
                 <TextView
-                    android:id="@+id/tv_light_value"
+                    android:id="@+id/tv_cashtag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="$ivanjonathan"
@@ -127,7 +127,7 @@
 
                 <!-- VALUE -->
                 <TextView
-                    android:id="@+id/tv_wallet_value"
+                    android:id="@+id/tv_wallet_balance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rp 100000"
@@ -188,7 +188,7 @@
 
                 <!-- VALUE -->
                 <TextView
-                    android:id="@+id/tv_phone_number_value"
+                    android:id="@+id/tv_phone_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12345"
