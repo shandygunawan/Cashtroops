@@ -19,6 +19,7 @@ x
 
     <!-- IMAGE SIZES -->
     <dimen name="image_logo">30dp</dimen>
+    <dimen name="image_overview">40dp</dimen>
     <dimen name="image_button">100dp</dimen>
     <dimen name="image_small">50dp</dimen>
     <dimen name="image_medium">70dp</dimen>
