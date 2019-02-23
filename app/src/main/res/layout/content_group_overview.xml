@@ -14,17 +14,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/iv_overview_group_image"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/image_small"
-            android:layout_marginBottom="@dimen/margin_medium" />
-
         <TextView
             android:id="@+id/tv_overview_group_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="8dp"
             style="@style/LinotteHeading"
             android:textSize="@dimen/text_xlarge"
             android:text="Group Name" />
