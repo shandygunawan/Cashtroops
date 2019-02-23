@@ -95,4 +95,18 @@ public class GroupOverviewActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void handleTransaction(View view){
+        switch(view.getId()){
+            case R.id.iv_overview_group_qr :
+
+                break;
+            case R.id.iv_overview_group_deposit :
+
+                break;
+            case R.id.iv_overview_group_withdraw :
+
+                break;
+        }
+    }
 }

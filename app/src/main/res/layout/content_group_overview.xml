@@ -169,6 +169,7 @@
                     android:layout_height="@dimen/image_button"
                     android:layout_marginTop="@dimen/margin_large"
                     android:src="@drawable/img_deposit"
+                    android:onClick="handleTransaction"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview_group_balance_title"
                     app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -228,6 +229,7 @@
                     android:layout_height="@dimen/image_button"
                     android:layout_marginTop="@dimen/margin_large"
                     android:src="@drawable/img_history"
+                    android:onClick="handleTransaction"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview_group_deposit"
                     app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -246,6 +248,7 @@
                     android:layout_height="@dimen/image_button"
                     android:layout_marginTop="@dimen/margin_large"
                     android:src="@drawable/img_qr"
+                    android:onClick="handleTransaction"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview_group_event"
                     app:layout_constraintLeft_toLeftOf="@id/tv_overview_group_event"
                     app:layout_constraintRight_toRightOf="@id/tv_overview_group_event" />
