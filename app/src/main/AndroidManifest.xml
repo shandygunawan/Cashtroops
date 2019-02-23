@@ -53,10 +53,6 @@
                 android:value=".GroupListActivity" />
         </activity>
         <activity
-            android:name=".GroupHistoryActivity"
-            android:label="@string/title_activity_group_history"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".GroupOverviewActivity"
             android:label="@string/title_activity_group_overview"
             android:parentActivityName=".GroupListActivity"
@@ -65,6 +61,7 @@
                 android:name="android.support.PARENT_ACIVITY"
                 android:value=".GroupListActivity" />
         </activity>
+        <activity android:name=".GroupHistoryActivity" />
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +25,7 @@ public class GroupOverviewActivity extends AppCompatActivity {
     private TextView mBalanceTextView;
     private TextView mNameTextView;
     private TextView mCashTagTextView;
+    private ImageView mHistoryImageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class GroupOverviewActivity extends AppCompatActivity {
         mNameTextView = findViewById(R.id.tv_overview_group_title);
         mCashTagTextView = findViewById(R.id.tv_overview_group_cashtag_value);
         mBalanceTextView = findViewById(R.id.tv_overview_group_balance_value);
+        mHistoryImageButton = findViewById(R.id.iv_overview_group_history);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -83,6 +86,15 @@ public class GroupOverviewActivity extends AppCompatActivity {
 
                     }
                 });
+
+        mHistoryImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(GroupOverviewActivity.this, GroupHistoryActivity.class);
+                intent1.putExtra("groupId", groupId);
+                startActivity(intent1);
+            }
+        });
     }
 
     @Override
@@ -96,15 +108,15 @@ public class GroupOverviewActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void handleTransaction(View view){
-        switch(view.getId()){
-            case R.id.iv_overview_group_qr :
+    public void handleTransaction(View view) {
+        switch (view.getId()) {
+            case R.id.iv_overview_group_qr:
 
                 break;
-            case R.id.iv_overview_group_deposit :
+            case R.id.iv_overview_group_deposit:
 
                 break;
-            case R.id.iv_overview_group_withdraw :
+            case R.id.iv_overview_group_withdraw:
 
                 break;
         }
